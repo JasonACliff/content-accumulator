@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+	<script type="module" src="./content-accumulator.js"></script>
+	
+</head>
+
+<body>
+	<script defer type="module">
+		import {accumulatorFactory, rss2} from "./content-accumulator.js";
+		
+		
+		const massivelyOP = accumulatorFactory({
+			rootUrl: 'https://api.rss2json.com/v1/api.json?rss_url=http://massivelyop.com/feed/'
+		}, rss2)
+		
+		massivelyOP.load({key: 'uovhjdrq4inmh5difvjvywt9iqvhpjdslsr8iy0a'})
+			.then ( response => response.json() )
+			.then ( data => console.log(massivelyOP.processData(data)) )
+			.catch ( error => console.log(error) );
+		
+		const anandTech = accumulatorFactory({
+			rootUrl: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.anandtech.com/rss/'
+		}, rss2)
+		
+		anandTech.load({key: 'uovhjdrq4inmh5difvjvywt9iqvhpjdslsr8iy0a'})
+			.then ( response => response.json() )
+			.then ( data => console.log(anandTech.processData(data)) )
+			.catch ( error => console.log(error) );
+		
+	</script>
+</body>
+</html>

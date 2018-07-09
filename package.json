@@ -1,0 +1,25 @@
+{
+  "name": "package",
+  "version": "0.0.1",
+  "description": "content-accumulator support libs",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "jest": "^23.2.0",
+    "rollup": "^0.62.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonACliff/content-accumulator.git"
+  },
+  "author": "Jason Cliff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JasonACliff/content-accumulator/issues"
+  },
+  "homepage": "https://github.com/JasonACliff/content-accumulator#readme"
+}
