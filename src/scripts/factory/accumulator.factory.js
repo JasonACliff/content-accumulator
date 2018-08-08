@@ -1,17 +1,21 @@
 export function accumulatorFactory(sourceObject, reducer) {
 	
 	return {
+		
+		
+		
 		processData: function(data) {
 			return reducer(data);
 		},
 		
 		load: function(params = {}) {
 			const newParams = Object.keys(params).length > 0
-				? Object.keys(params).map((item, key)=> `&($key)=$(item)` ).join(';')
+				? Object.keys(params).map((item, key)=> `$(key)=$(item)` ).join(';')
 				: '';
 			return netWorkFetch(sourceObject, newParams );
 		
 		}
+		
 	}
 	
 }
